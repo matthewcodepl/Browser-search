@@ -12,10 +12,7 @@ html body {
 .top {
     height: 100vh;
     width: 100vw;
-    /*
-        Search other background
-    */
-    background: center / cover url('img/bg-top.jpg');
+    transition: background 1.6s;
     position: relative;
 }
 
@@ -47,8 +44,7 @@ h2 {
 }
 
 input::placeholder {
-    color:rgba(128, 128, 128, 0.541);
-
+    color: rgba(255, 255, 255, 0.599);
 }
 
 #clock {

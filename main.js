@@ -39,7 +39,6 @@ function showClock() {
   let hours = date.getHours();
   let minutes = date.getMinutes();
   let seconds = date.getSeconds();
-  const header = document.querySelector(".top");
   if (hours > 24) {
     hours = 01;
   }
@@ -49,7 +48,18 @@ function showClock() {
   let time = `${hours} : ${minutes} : ${seconds}`;
   document.querySelector("#clock").textContent = time;
   setTimeout(showClock, 1000);
+  let bgOfWebsite = document.querySelector(".top");
+/*
+Can be made by switch
+*/  
+if(hours < 12) {
+  bgOfWebsite.style. background =  "center / cover url('img/bg-sun.jpg')";
+} else if( hours >= 12) {
+  bgOfWebsite.style. background =  "center / cover url('img/bg-night.jpg')";
 }
+
+}
+
 
 showClock();
 
