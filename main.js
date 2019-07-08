@@ -8,31 +8,25 @@
 
 let defaultSearch = "http://google.com/search?q=";
 let input = document.querySelector(".inp");
-input.addEventListener('keydown', e => {
-    let keycode = e.keyCode;
-    if (keycode == 13) {
-
-        function search() {
-            window.open(`${defaultSearch}${q}`);
-
-          }
-          
-          if (input.value > 0) {
-            input.addEventListener("input", search, false);
-
-          }
-
-             
-                setTimeout(() => {
-                        input.value = '';
-                }, 1);
+input.addEventListener("keydown", e => {
+  let keycode = e.keyCode;
+  if (keycode == 13) {
+    function search() {
+      window.open(`${defaultSearch}${q}`);
     }
-  });
-  
 
+    if (input.value > 0) {
+      input.addEventListener("input", search, false);
+    }
+
+    setTimeout(() => {
+      input.value = "";
+    }, 1);
+  }
+});
 
 function showClock() {
-    /*
+  /*
         Get the time from object of Date
     */
   let date = new Date();
@@ -49,17 +43,15 @@ function showClock() {
   document.querySelector("#clock").textContent = time;
   setTimeout(showClock, 1000);
   let bgOfWebsite = document.querySelector(".top");
-/*
+  /*
 Can be made by switch
-*/  
-if(hours < 12) {
-  bgOfWebsite.style. background =  "center / cover url('img/bg-sun.jpg')";
-} else if( hours >= 12) {
-  bgOfWebsite.style. background =  "center / cover url('img/bg-night.jpg')";
-}
+*/
 
+  if (hours < 16) {
+    bgOfWebsite.style.background = "center / cover url('img/bg-sun.jpg')";
+  } else if (hours >= 16) {
+    bgOfWebsite.style.background = "center / cover url('img/bg-night.jpg')";
+  }
 }
-
 
 showClock();
-
